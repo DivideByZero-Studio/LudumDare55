@@ -2,5 +2,6 @@ public enum EmergencyType
 {
      Ambulance,
      Fire,
-     Police
+     Police,
+     NonType
 }

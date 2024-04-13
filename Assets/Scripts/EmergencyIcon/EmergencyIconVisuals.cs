@@ -7,27 +7,19 @@ public class EmergencyIconVisuals : MonoBehaviour
     [Inject] private Camera _camera;
 
     [SerializeField] private Animator _animator;
-    
-    private ClickReciever _clickReciever;
 
-    private void Awake()
-    {
-        _clickReciever = GetComponent<ClickReciever>();
-    }
-    private void ZoomIn()
+    public void ZoomIn()
     {
         _animator.SetBool("Zoomed", true);
+    }
+
+    public void ZoomOut()
+    {
+        _animator.SetBool("Zoomed", false);
     }
  
     private void OnEnable()
     {
-        _clickReciever.Clicked += ZoomIn;
         transform.LookAt(_camera.transform);
     }
-
-    private void OnDisable()
-    {
-        _clickReciever.Clicked -= ZoomIn;
-    }
-
 }
