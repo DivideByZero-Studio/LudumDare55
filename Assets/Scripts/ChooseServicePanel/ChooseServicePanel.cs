@@ -18,7 +18,7 @@ public class ChooseServicePanel : MonoBehaviour
     {
         _visuals = GetComponent<ChooseServicePanelVisuals>();
     }
-
+    
     public void Activate(EmergencyIcon icon)
     {
         if (icon == _currentIcon)
