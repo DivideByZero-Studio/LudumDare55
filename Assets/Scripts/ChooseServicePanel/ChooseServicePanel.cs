@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChooseServicePanel : MonoBehaviour
 {
-    public event Action<EmergencyIcon, EmergencyType> EmergencyDone;
+    public event Action<Transform, EmergencyType> EmergencyDone;
     public event Action EmergencyFailed;
 
     [SerializeField] private List<ChooseServiceButton> _chooseButtons;
@@ -46,6 +46,11 @@ public class ChooseServicePanel : MonoBehaviour
         _isActive = false;
     }
 
+    public EmergencyIcon GetCurrentIcon()
+    {
+        return _currentIcon;
+    }
+
     private void OnChoosed(EmergencyType emergencyType)
     {
         if (_expectedEmergencyType != emergencyType)
@@ -55,7 +60,7 @@ public class ChooseServicePanel : MonoBehaviour
             return;
         }
 
-        EmergencyDone?.Invoke(_currentIcon, emergencyType);
+        EmergencyDone?.Invoke(_currentIcon.EmergencyPointTransform, emergencyType);
         Deactivate();
     }
 
