@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7165993479666862643}
   - component: {fileID: 9134286190355675248}
   - component: {fileID: 8262745906471221611}
+  - component: {fileID: 4587671886115745986}
   m_Layer: 0
   m_Name: PoliceCar
   m_TagString: Untagged
@@ -63,13 +64,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046072000422938980}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8d1a83d5b184a64a82ffbf8e094f4da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tran: {fileID: 0}
-  agent: {fileID: 9134286190355675248}
+  distanceToDissolve: 10
+  materialDissolve: {fileID: 1925244019912738115}
+--- !u!114 &4587671886115745986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046072000422938980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd702ea1d14eb2f43828321c4759c66f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3280259577700352709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -149,6 +162,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 120217b2bf50e664b8bea0044346dc04, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2636469668187278477}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 120217b2bf50e664b8bea0044346dc04, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1925244019912738115}
   m_SourcePrefab: {fileID: 100100000, guid: 120217b2bf50e664b8bea0044346dc04, type: 3}
 --- !u!1 &2397246945072136084 stripped
 GameObject:
@@ -177,6 +193,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8218924594169486761, guid: 120217b2bf50e664b8bea0044346dc04, type: 3}
+--- !u!114 &1925244019912738115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2397246945072136084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7884f83c86955cf4bbf0bb939b100df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDissolve: 1
 --- !u!4 &3030759588184614190 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 120217b2bf50e664b8bea0044346dc04, type: 3}
