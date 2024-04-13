@@ -56,11 +56,13 @@ public class ChooseServicePanel : MonoBehaviour
         if (_expectedEmergencyType != emergencyType)
         {
             EmergencyFailed?.Invoke();
+            _currentIcon.PlayFailedEffect();
             Deactivate();
             return;
         }
 
         EmergencyDone?.Invoke(_currentIcon.EmergencyPointTransform, emergencyType);
+        _currentIcon.PlayDoneEffect();
         Deactivate();
     }
 
