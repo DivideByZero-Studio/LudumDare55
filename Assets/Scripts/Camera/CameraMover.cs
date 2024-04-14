@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.SocialPlatforms.GameCenter;
 
 public class CameraMover : MonoBehaviour
@@ -11,6 +13,7 @@ public class CameraMover : MonoBehaviour
     [SerializeField] private float minCameraSize;
     [SerializeField] private float maxCameraSize;
     [SerializeField] private float scrollStep;
+    [SerializeField] private float scrollSpeed;
 
     private float _currentSize;
     private bool _shouldMove;
@@ -22,6 +25,7 @@ public class CameraMover : MonoBehaviour
     private readonly float maxAllowedMoveDistance = 300f;
 
     private PlayerInput _input;
+    private Coroutine _sizeSetRoutine;
 
     private void Awake()
     {
@@ -97,7 +101,24 @@ public class CameraMover : MonoBehaviour
 
     private void SetCamerasSize(float size)
     {
-        _gameCamera.orthographicSize = size;
-        _UICamera.orthographicSize = size;
+        if (_sizeSetRoutine != null) 
+            StopCoroutine(_sizeSetRoutine);
+        _sizeSetRoutine = StartCoroutine(SetCamerasSizeRoutine(size));
+    }
+
+    private IEnumerator SetCamerasSizeRoutine(float size)
+    {
+        float time = 1 / scrollSpeed;
+        float currentSize = _gameCamera.orthographicSize;
+        float progress = 0;
+        while (time > 0)
+        {
+            progress += scrollSpeed * Time.deltaTime;
+            currentSize = Mathf.Lerp(currentSize, size, progress);
+            _gameCamera.orthographicSize = currentSize;
+            _UICamera.orthographicSize = currentSize;
+            time -= Time.deltaTime;
+            yield return null;
+        }
     }
 }
