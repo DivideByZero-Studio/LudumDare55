@@ -38,7 +38,6 @@ public class EmergencySpawnService : MonoBehaviour
             if (spawner != null)
                 spawner.SpawnByType(type);
 
-            Debug.Log(_timeToSpawn / (1f / _difficultyMultiplier.Evaluate(_timeCountService.TimePassed)));
             yield return new WaitForSeconds(_timeToSpawn / _difficultyMultiplier.Evaluate(_timeCountService.TimePassed));
         }
     }
