@@ -158,8 +158,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1804586325477617634}
   - {fileID: 2172043229217264730}
+  - {fileID: 1804586325477617634}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!114 &4985031318637413661
@@ -179,6 +179,7 @@ MonoBehaviour:
   minCameraSize: 10
   maxCameraSize: 160
   scrollStep: 4
+  scrollSpeed: 0
 --- !u!1 &7559101576185608250
 GameObject:
   m_ObjectHideFlags: 0

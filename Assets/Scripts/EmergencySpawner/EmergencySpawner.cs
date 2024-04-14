@@ -42,7 +42,7 @@ public class EmergencySpawner : MonoBehaviour
 
     private void Unoccupie()
     {
-        Destroy(_currentPointPrefab.gameObject);
+        Destroy(_currentPointPrefab);
         _currentPointPrefab = null;
         _currentIcon = null;
         _occupied = false;

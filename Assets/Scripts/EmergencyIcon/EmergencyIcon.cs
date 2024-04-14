@@ -88,7 +88,7 @@ public class EmergencyIcon : MonoBehaviour
             _chooseServicePanel.Deactivate();
         }
         Died?.Invoke();
-        Destroy(transform.parent.gameObject);
+        PlayFailedEffect();
     }
 
     private IEnumerator ParticleRoutine()
