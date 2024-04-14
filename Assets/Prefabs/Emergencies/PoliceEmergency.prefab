@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxLifeTime: 10
   _particleSystemLifeTime: 1
+  _emergencyPointPrefab: {fileID: 6649446620636071371, guid: 0a934c02fd8b8e94e88ad14ae7243503, type: 3}
 --- !u!114 &2806552950749777375
 MonoBehaviour:
   m_ObjectHideFlags: 0

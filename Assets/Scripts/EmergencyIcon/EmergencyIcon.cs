@@ -6,12 +6,14 @@ using Zenject;
 [RequireComponent(typeof(ClickReciever), typeof(BaseEmergency))]
 public class EmergencyIcon : MonoBehaviour
 {
-    public event Action Died; 
+    public event Action Died;
 
+    public GameObject EmergencyPointPrefab => _emergencyPointPrefab;
     public Transform EmergencyPointTransform => _emergencyPointTransform;
 
     [SerializeField] private float _maxLifeTime;
     [SerializeField] private float _particleSystemLifeTime;
+    [SerializeField] private GameObject _emergencyPointPrefab;
 
     private Transform _emergencyPointTransform;
     private ClickReciever _clickReciever;
@@ -86,7 +88,7 @@ public class EmergencyIcon : MonoBehaviour
             _chooseServicePanel.Deactivate();
         }
         Died?.Invoke();
-        Destroy(transform.parent.gameObject);
+        PlayFailedEffect();
     }
 
     private IEnumerator ParticleRoutine()

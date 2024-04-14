@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
@@ -16,6 +15,7 @@ public class EmergencySpawner : MonoBehaviour
 
     private EmergencyIcon _currentIcon;
 
+    private GameObject _currentPointPrefab;
 
     public void SpawnByType(EmergencyType type)
     {
@@ -25,6 +25,7 @@ public class EmergencySpawner : MonoBehaviour
         _currentIcon = _diContainer.InstantiatePrefab(GetIcon(type), _iconParentTransform).GetComponentInChildren<EmergencyIcon>();
         _currentIcon.Initialize(transform);
         _currentIcon.Died += Unoccupie;
+        _currentPointPrefab = Instantiate(_currentIcon.EmergencyPointPrefab, transform);
     }
 
     private GameObject GetIcon(EmergencyType type)
@@ -41,6 +42,8 @@ public class EmergencySpawner : MonoBehaviour
 
     private void Unoccupie()
     {
+        Destroy(_currentPointPrefab);
+        _currentPointPrefab = null;
         _currentIcon = null;
         _occupied = false;
     }
