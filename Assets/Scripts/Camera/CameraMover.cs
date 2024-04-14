@@ -1,9 +1,6 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
-using UnityEngine.SocialPlatforms.GameCenter;
 
 public class CameraMover : MonoBehaviour
 {
@@ -19,6 +16,7 @@ public class CameraMover : MonoBehaviour
     private bool _shouldMove;
 
     private Vector3 _cameraCenterPosition;
+    private Vector3 startMousePosition;
 
     private float _allowedMoveDistance;
     private readonly float minAllowedMoveDistance = 1f;
@@ -42,7 +40,7 @@ public class CameraMover : MonoBehaviour
         _cameraCenterPosition = _gameCamera.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 0));
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         if (_shouldMove)
         {
@@ -67,9 +65,9 @@ public class CameraMover : MonoBehaviour
 
     private void Move()
     {
-        var currentSizeMultiplier = _currentSize / maxCameraSize;
-        var direction = GetMoveDirection() * currentSizeMultiplier;
-        transform.Translate(direction.x, 0, direction.y);
+        var currentMousePosition = _gameCamera.ScreenToWorldPoint(_input.Player.MousePosition.ReadValue<Vector2>());
+        var difference = currentMousePosition - transform.position;
+        transform.position = startMousePosition - difference;
     }
 
     private Vector2 GetMoveDirection()
@@ -79,6 +77,7 @@ public class CameraMover : MonoBehaviour
 
     private void OnMouseClick(InputAction.CallbackContext context)
     {
+        startMousePosition = _gameCamera.ScreenToWorldPoint(_input.Player.MousePosition.ReadValue<Vector2>());
         _shouldMove = true;
     }
 
@@ -101,7 +100,7 @@ public class CameraMover : MonoBehaviour
 
     private void SetCamerasSize(float size)
     {
-        if (_sizeSetRoutine != null) 
+        if (_sizeSetRoutine != null)
             StopCoroutine(_sizeSetRoutine);
         _sizeSetRoutine = StartCoroutine(SetCamerasSizeRoutine(size));
     }
