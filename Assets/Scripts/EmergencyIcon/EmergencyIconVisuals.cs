@@ -9,6 +9,8 @@ public class EmergencyIconVisuals : MonoBehaviour
 
     [SerializeField] private Animator _animator;
     [SerializeField] private Canvas _canvas;
+    [SerializeField] private ParticleSystem _doneEffect;
+    [SerializeField] private ParticleSystem _failedEffect;
 
     private Transform _transform;
     private float _maxCameraOrthographicSize;
@@ -36,6 +38,16 @@ public class EmergencyIconVisuals : MonoBehaviour
     {
         _canvas.gameObject.SetActive(false);
         _collider.enabled = false;
+    }
+
+    public void PlayDoneEffect()
+    {
+        _doneEffect.Play();
+    }
+
+    public void PlayFailedEffect()
+    {
+        _failedEffect.Play();
     }
 
     private void Update()

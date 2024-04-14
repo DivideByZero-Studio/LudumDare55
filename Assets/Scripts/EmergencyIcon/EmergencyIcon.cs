@@ -49,6 +49,7 @@ public class EmergencyIcon : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(ParticleRoutine());
         _visuals.Deactivate();
+        _visuals.PlayDoneEffect();
         //Play Done effect
     }
 
@@ -57,6 +58,7 @@ public class EmergencyIcon : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(ParticleRoutine());
         _visuals.Deactivate();
+        _visuals.PlayFailedEffect();
         //Play Failed effect
     }
 
