@@ -46,7 +46,7 @@ public class EmergencySpawnService : MonoBehaviour
 
     private EmergencyType GetRandomType()
     {
-        int index = _random.Next(0, 2);
+        int index = _random.Next(0, 3);
         switch (index)
         {
             case 0:
