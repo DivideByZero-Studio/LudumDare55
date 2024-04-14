@@ -18,7 +18,7 @@ public class EmergencyIconVisuals : MonoBehaviour
     private void Awake()
     {
         _transform = transform;
-        _maxCameraOrthographicSize = _camera.orthographicSize;
+        _maxCameraOrthographicSize = CameraExtensions.MaxOrthographicSize;
         _collider = GetComponent<Collider>();
     }
 

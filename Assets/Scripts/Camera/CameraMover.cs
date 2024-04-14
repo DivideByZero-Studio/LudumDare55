@@ -40,6 +40,7 @@ public class CameraMover : MonoBehaviour
 
     private void LateUpdate()
     {
+        Debug.Log("Q");
         if (_shouldMove)
         {
             Move();
