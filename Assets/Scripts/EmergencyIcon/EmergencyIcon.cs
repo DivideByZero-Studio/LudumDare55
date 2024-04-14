@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using Zenject;
@@ -5,16 +6,21 @@ using Zenject;
 [RequireComponent(typeof(ClickReciever), typeof(BaseEmergency))]
 public class EmergencyIcon : MonoBehaviour
 {
+    public event Action Died; 
+
     public Transform EmergencyPointTransform => _emergencyPointTransform;
 
-    [SerializeField] private Transform _emergencyPointTransform;
-    [SerializeField] private float _lifeTime;
+    [SerializeField] private float _maxLifeTime;
+    [SerializeField] private float _particleSystemLifeTime;
 
+    private Transform _emergencyPointTransform;
     private ClickReciever _clickReciever;
     private BaseEmergency _emergency;
     private EmergencyIconVisuals _visuals;
 
     [Inject] ChooseServicePanel _chooseServicePanel;
+    [Inject] EmergencySpawnService _emergencySpawnService;
+    [Inject] TimeCountService _timeCountService;
 
     private void Awake()
     {
@@ -27,9 +33,31 @@ public class EmergencyIcon : MonoBehaviour
     {
         StartCoroutine(LifeRoutine());
     }
+
     private void InvokeChoosePanel()
     {
         _chooseServicePanel.Activate(this);
+    }
+
+    public void Initialize(Transform emergencyPointTransform)
+    {
+        _emergencyPointTransform = emergencyPointTransform;
+    }
+
+    public void PlayDoneEffect()
+    {
+        StopAllCoroutines();
+        StartCoroutine(ParticleRoutine());
+        _visuals.Deactivate();
+        //Play Done effect
+    }
+
+    public void PlayFailedEffect()
+    {
+        StopAllCoroutines();
+        StartCoroutine(ParticleRoutine());
+        _visuals.Deactivate();
+        //Play Failed effect
     }
 
     public EmergencyType GetEmergencyType()
@@ -49,13 +77,21 @@ public class EmergencyIcon : MonoBehaviour
 
     private IEnumerator LifeRoutine()
     {
-        yield return new WaitForSeconds(_lifeTime);
+        yield return new WaitForSeconds(_maxLifeTime / _emergencySpawnService._difficultyMultiplier.Evaluate(_timeCountService.TimePassed));
         var activeEmergencyIcon = _chooseServicePanel.GetCurrentIcon();
         if (activeEmergencyIcon == this)
         {
             _chooseServicePanel.Deactivate();
-        } 
-            Destroy(transform.parent.gameObject);
+        }
+        Died?.Invoke();
+        Destroy(transform.parent.gameObject);
+    }
+
+    private IEnumerator ParticleRoutine()
+    {
+        yield return new WaitForSeconds(_particleSystemLifeTime);
+        Died?.Invoke();
+        Destroy(transform.parent.gameObject);
     }
 
     private void OnEnable()

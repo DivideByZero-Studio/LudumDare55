@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 [RequireComponent(typeof(ClickReciever))]
@@ -7,14 +8,18 @@ public class EmergencyIconVisuals : MonoBehaviour
     [Inject] private Camera _camera;
 
     [SerializeField] private Animator _animator;
+    [SerializeField] private Canvas _canvas;
 
     private Transform _transform;
     private float _maxCameraOrthographicSize;
+
+    private Collider _collider;
 
     private void Awake()
     {
         _transform = transform;
         _maxCameraOrthographicSize = _camera.orthographicSize;
+        _collider = GetComponent<Collider>();
     }
 
     public void ZoomIn()
@@ -25,6 +30,12 @@ public class EmergencyIconVisuals : MonoBehaviour
     public void ZoomOut()
     {
         _animator.SetBool("Zoomed", false);
+    }
+
+    public void Deactivate()
+    {
+        _canvas.gameObject.SetActive(false);
+        _collider.enabled = false;
     }
 
     private void Update()
