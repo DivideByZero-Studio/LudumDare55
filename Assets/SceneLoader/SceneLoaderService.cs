@@ -3,27 +3,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+public class SceneLoaderService : MonoBehaviour
 {
-    private static SceneLoader _instance;
-    private static SceneLoader Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                var go = new GameObject() {name = "SceneLoader" };
-                var component = go.AddComponent<SceneLoader>();
-                _instance = component;
-                DontDestroyOnLoad(go);
-            }
-            return _instance;
-        }
-    }
+    private bool isLoading;
 
-    private static bool isLoading;
-
-    public static void LoadScene(string sceneName)
+    public void LoadScene(string sceneName)
     {
         if (isLoading) return;
 
@@ -31,22 +15,22 @@ public class SceneLoader : MonoBehaviour
         if (currentSceneName == sceneName)
             throw new Exception("You are trying to load already loaded scene");
 
-        Instance.StartCoroutine(LoadSceneRoutine(sceneName));
+        StartCoroutine(LoadSceneRoutine(sceneName));
     }
 
-    public static void LoadSceneInstantly(string sceneName)
+    public void LoadSceneInstantly(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
 
-    public static void ReloadScene()
+    public void ReloadScene()
     {
         if (isLoading) return;
 
-        Instance.StartCoroutine(LoadSceneRoutine(SceneManager.GetActiveScene().name));
+        StartCoroutine(LoadSceneRoutine(SceneManager.GetActiveScene().name));
     }
 
-    private static IEnumerator LoadSceneRoutine(string sceneName)
+    private IEnumerator LoadSceneRoutine(string sceneName)
     {
         isLoading = true;
 
