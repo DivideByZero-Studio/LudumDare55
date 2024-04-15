@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 public class MainMenuService : MonoBehaviour
 {
@@ -11,14 +12,12 @@ public class MainMenuService : MonoBehaviour
 
     public void SwitchToSettings()
     {
-        Debug.Log("Settings");
         _cameraAnimator.Play("SwitchToSettings");
     }
 
     public void SwitchToMainFromSettings()
     {
         _cameraAnimator.Play("SwitchToMainFromSettings");
-        Debug.Log("q");
     }
 
     public void SwitchToAboutUs()
