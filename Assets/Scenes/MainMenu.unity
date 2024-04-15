@@ -2953,6 +2953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 821085341}
   - component: {fileID: 821085342}
+  - component: {fileID: 821085343}
   m_Layer: 5
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -3033,6 +3034,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &821085343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821085340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb2057b3ae413e4394c38c591015db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mixer: {fileID: 24100000, guid: dbaa9b4e62ed3be4c95f9412f3a2a5e1, type: 2}
+  _volumeGroup: 0
 --- !u!4 &831815488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7026000295285956488, guid: a824f9a62caf9c54a9458419d6dcbbe8, type: 3}
@@ -9663,8 +9678,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2123458263}
   - component: {fileID: 2123458264}
+  - component: {fileID: 2123458265}
   m_Layer: 5
-  m_Name: SFX
+  m_Name: SFXSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9743,6 +9759,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2123458265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123458262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb2057b3ae413e4394c38c591015db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mixer: {fileID: 24100000, guid: dbaa9b4e62ed3be4c95f9412f3a2a5e1, type: 2}
+  _volumeGroup: 1
 --- !u!1 &2146419490
 GameObject:
   m_ObjectHideFlags: 0
