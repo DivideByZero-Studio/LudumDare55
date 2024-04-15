@@ -64,7 +64,7 @@ public class EmergencySpawnService : MonoBehaviour
         if (nonOccupiedSpawners.Count == 0)
             return null;
 
-        var spawner = nonOccupiedSpawners[_random.Next(nonOccupiedSpawners.Count - 1)];
+        var spawner = nonOccupiedSpawners[_random.Next(nonOccupiedSpawners.Count)];
         return spawner;
     }
 

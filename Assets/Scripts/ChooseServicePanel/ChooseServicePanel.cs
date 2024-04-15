@@ -46,6 +46,11 @@ public class ChooseServicePanel : MonoBehaviour
         _isActive = false;
     }
 
+    public void GetEmergencyFail()
+    {
+        EmergencyFailed?.Invoke();
+    }
+
     public EmergencyIcon GetCurrentIcon()
     {
         return _currentIcon;
