@@ -7,6 +7,7 @@ public class PeopleLikeService : MonoBehaviour
     public event Action OnZeroLikes;
     public event Action OnLikesChanged;
     public int CurrentLikes => _currentLikes;
+    public int MaxLikes => _maxLikes;
 
     [SerializeField] private int _maxLikes;
     [SerializeField] private int _addCountLikes;
