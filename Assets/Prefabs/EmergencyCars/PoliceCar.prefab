@@ -69,8 +69,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d1a83d5b184a64a82ffbf8e094f4da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceToDissolve: 10
-  materialDissolve: {fileID: 1925244019912738115}
+  m_DistanceToDissolve: 10
+  m_MaterialDissolve: {fileID: 1925244019912738115}
+  m_SirenSound: {fileID: 8300000, guid: 678783a55224d25438e884ef172ca869, type: 3}
 --- !u!114 &4587671886115745986
 MonoBehaviour:
   m_ObjectHideFlags: 0

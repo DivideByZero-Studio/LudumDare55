@@ -1,21 +1,33 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
+using Zenject;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class EmergencyCar : MonoBehaviour
 {
-    [SerializeField] private float distanceToDissolve;
-    [SerializeField] private MaterialDissolve materialDissolve;
+    [SerializeField] private float m_DistanceToDissolve;
+    [SerializeField] private MaterialDissolve m_MaterialDissolve;
+    [SerializeField] private AudioClip m_SirenSound;
 
     private NavMeshAgent _agent;
     private Vector3 _destination;
     private bool _isDissolving;
 
-    private void Awake()
+    AudioService _audioService;
+
+    [Inject]
+    public void Construct([Inject] AudioService audioService)
+    {
+        _audioService = audioService;
+    }
+
+    private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
-        materialDissolve.DissolveEnded += OnDissolveEnded;
+        m_MaterialDissolve.DissolveEnded += OnDissolveEnded;
+        _audioService.PlaySFX(m_SirenSound);
     }
 
     public void Initialize(Vector3 destination)
@@ -28,10 +40,10 @@ public class EmergencyCar : MonoBehaviour
     {
         if (_isDissolving) return;
 
-        if (Vector3.Distance(transform.position, _destination) <= distanceToDissolve)
+        if (Vector3.Distance(transform.position, _destination) <= m_DistanceToDissolve)
         {
             _isDissolving = true;
-            materialDissolve.StartDissolve();
+            m_MaterialDissolve.StartDissolve();
         }
     }
 
