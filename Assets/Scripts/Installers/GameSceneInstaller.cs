@@ -8,6 +8,7 @@ public class GameSceneInstaller : MonoInstaller
     [SerializeField] private TimeCountService _timeCountService;
     [SerializeField] private EmergencySpawnService _emergencySpawnService;
     [SerializeField] private ScoreCounterService _scoreCounterService;
+    [SerializeField] private PeopleLikeService _peopleLikeService;
     public override void InstallBindings()
     {
         Container.Bind<Camera>().FromInstance(_gameCamera).AsSingle();
@@ -15,5 +16,6 @@ public class GameSceneInstaller : MonoInstaller
         Container.Bind<TimeCountService>().FromInstance(_timeCountService).AsSingle();
         Container.Bind<EmergencySpawnService>().FromInstance(_emergencySpawnService).AsSingle();
         Container.Bind<ScoreCounterService>().FromInstance(_scoreCounterService).AsSingle();
+        Container.Bind<PeopleLikeService>().FromInstance(_peopleLikeService).AsSingle();
     }
 }

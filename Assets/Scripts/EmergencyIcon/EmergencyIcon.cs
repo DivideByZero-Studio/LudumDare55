@@ -87,6 +87,7 @@ public class EmergencyIcon : MonoBehaviour
         {
             _chooseServicePanel.Deactivate();
         }
+        _chooseServicePanel.GetEmergencyFail();
         Died?.Invoke();
         PlayFailedEffect();
     }
