@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
 using Zenject;
@@ -15,17 +13,15 @@ public class EmergencyCar : MonoBehaviour
     private Vector3 _destination;
     private bool _isDissolving;
 
-    AudioService _audioService;
+    [Inject] private AudioService _audioService;
 
-    [Inject]
-    public void Construct([Inject] AudioService audioService)
+    private void Awake()
     {
-        _audioService = audioService;
+        _agent = GetComponent<NavMeshAgent>();
     }
 
     private void Start()
     {
-        _agent = GetComponent<NavMeshAgent>();
         m_MaterialDissolve.DissolveEnded += OnDissolveEnded;
         _audioService.PlaySFX(m_SirenSound);
     }
