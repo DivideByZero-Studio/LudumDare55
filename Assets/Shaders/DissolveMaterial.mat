@@ -109,7 +109,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _NoiseScale: 60000
+    - _NoiseScale: 4000000
     - _OcclusionStrength: 1
     - _Opacity: 1
     - _Parallax: 0.005
