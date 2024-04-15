@@ -40853,6 +40853,7 @@ MonoBehaviour:
   _timeCountService: {fileID: 1126427715}
   _emergencySpawnService: {fileID: 1488038291}
   _scoreCounterService: {fileID: 1954173430}
+  _peopleLikeService: {fileID: 1697461316}
 --- !u!4 &1410872935 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 422762, guid: 357a66039fecd22469b4e4ea64729751, type: 3}
@@ -49715,6 +49716,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxLikes: 1
+  _addCountLikes: 1
+  _decreaseCountLikes: 10
 --- !u!4 &1697461317
 Transform:
   m_ObjectHideFlags: 0
