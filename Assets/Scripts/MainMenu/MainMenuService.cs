@@ -5,9 +5,10 @@ public class MainMenuService : MonoBehaviour
 {
     [SerializeField] private Animator _cameraAnimator;
 
+    [Inject] private SceneLoaderService _sceneLoaderService;
     public void SwitchToGameScene()
     {
-        Debug.Log("Game Scene");
+        _sceneLoaderService.LoadScene("SampleScene");
     }
 
     public void SwitchToSettings()
