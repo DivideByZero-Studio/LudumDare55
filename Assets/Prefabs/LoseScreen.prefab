@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.7264151, g: 0.5324482, b: 0.48313457, a: 1}
-    m_HighlightedColor: {r: 0.754717, g: 0.5191325, b: 0.45923817, a: 1}
+    m_HighlightedColor: {r: 0.8679245, g: 0.7482085, b: 0.7164471, a: 1}
     m_PressedColor: {r: 0.8962264, g: 0.7237451, b: 0.6806248, a: 1}
     m_SelectedColor: {r: 0.75294125, g: 0.5176471, b: 0.45882356, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -544,7 +544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4835446090966544211
 RectTransform:
   m_ObjectHideFlags: 0
