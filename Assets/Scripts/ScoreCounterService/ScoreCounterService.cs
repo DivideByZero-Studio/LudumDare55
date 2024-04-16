@@ -10,12 +10,12 @@ public class ScoreCounterService : MonoBehaviour
 
     [Inject] private ChooseServicePanel _chooseServicePanel;
 
-    private int _score = 0;
+    public int Score { get; private set; }
 
     private void AddScoreByDoneEmergency(Transform emergencyTransform, EmergencyType emergencyType)
     {
-        _score += _scoreByEmergencyDone;
-        ScoreChanged?.Invoke(_score);
+        Score += _scoreByEmergencyDone;
+        ScoreChanged?.Invoke(Score);
     }
 
     private void OnEnable()
