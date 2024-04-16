@@ -39,7 +39,7 @@ public class AudioService : MonoBehaviour
 
     public void PlayAmbient(AudioClip clip, float volume = 1f)
     {
-        _soundFXSource.volume = volume;
-        _soundFXSource.PlayOneShot(clip);
+        _ambientSource.volume = volume;
+        _ambientSource.PlayOneShot(clip);
     }
 }

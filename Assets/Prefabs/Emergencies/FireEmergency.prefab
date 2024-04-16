@@ -112,6 +112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe484ad5e3d6364185b89f6d2b87a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _chooseClip: {fileID: 8300000, guid: dbd5dfb8f82a9b04e82c16d6914e6818, type: 3}
+  _failClip: {fileID: 8300000, guid: ef18d9e260bad724f8cc29fd885451e7, type: 3}
+  _doneClip: {fileID: 8300000, guid: a9c904d38761f5842997b3a8210c9f9d, type: 3}
   _maxLifeTime: 10
   _particleSystemLifeTime: 1
   _emergencyPointPrefab: {fileID: 8574021665243415283, guid: 43c7866b0b73ec1408181b9442d970d4, type: 3}
