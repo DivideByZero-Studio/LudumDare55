@@ -30,4 +30,9 @@ public class MainMenuService : MonoBehaviour
     {
         _cameraAnimator.Play("SwitchToMainFromAboutUs");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

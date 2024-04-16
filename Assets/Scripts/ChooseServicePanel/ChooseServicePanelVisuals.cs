@@ -2,18 +2,20 @@ using UnityEngine;
 
 public class ChooseServicePanelVisuals : MonoBehaviour
 {
-    private void Start()
+    private Animator _animator;
+
+    private void Awake()
     {
-        gameObject.SetActive(false);    
+        _animator = GetComponent<Animator>();
     }
 
     public void Activate()
     {
-        gameObject.SetActive(true);
+        _animator.Play("ActivatePanel");
     }
 
     public void Deactivate()
     {
-        gameObject.SetActive(false);
+        _animator.Play("DeactivatePanel");
     }
 }
