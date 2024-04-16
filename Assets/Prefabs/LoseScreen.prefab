@@ -815,8 +815,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f5dd966e7c0d8f4dbf846ea359b8b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _screenElements: {fileID: 3197978622400673065}
-  _loseSound: {fileID: 8300000, guid: bd50ec657ac83ad41901f09e4386f288, type: 3}
+  scoreLabel: {fileID: 6924965400000287887}
+  highscoreLabel: {fileID: 8609220572968064952}
+  screenElements: {fileID: 3197978622400673065}
+  loseSound: {fileID: 8300000, guid: bd50ec657ac83ad41901f09e4386f288, type: 3}
 --- !u!1 &6116616295553821741
 GameObject:
   m_ObjectHideFlags: 0

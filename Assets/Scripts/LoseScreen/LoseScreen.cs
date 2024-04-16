@@ -1,14 +1,18 @@
+using TMPro;
 using UnityEngine;
 using Zenject;
 
 public class LoseScreen : MonoBehaviour
 {
-    [SerializeField] private GameObject _screenElements;
-    [SerializeField] private AudioClip _loseSound;
+    [SerializeField] private TextMeshProUGUI scoreLabel;
+    [SerializeField] private TextMeshProUGUI highscoreLabel;
+    [SerializeField] private GameObject screenElements;
+    [SerializeField] private AudioClip loseSound;
 
     [Inject] private PeopleLikeService _peopleLikeService;
     [Inject] private SceneLoaderService _sceneLoaderService;
     [Inject] private AudioService _audioService;
+    [Inject] private ScoreCounterService _scoreCounterService;
 
     private void Start()
     {
@@ -17,10 +21,16 @@ public class LoseScreen : MonoBehaviour
 
     private void Show()
     {
-        _screenElements.SetActive(true);
+        var score = _scoreCounterService.Score;
+        var highscore = PlayerPrefs.GetInt("Highscore", score);
+
+        screenElements.SetActive(true);
+        scoreLabel.text = $"SCORE: {score}";
+        highscoreLabel.text = $"HIGHSCORE: {highscore}";
+
         _audioService.StopMusic();
         _audioService.StopAmbient();
-        _audioService.PlaySFX(_loseSound);
+        _audioService.PlaySFX(loseSound);
     }
 
     public void OnRestartButtonPressed()

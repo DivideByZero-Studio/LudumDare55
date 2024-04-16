@@ -9846,6 +9846,7 @@ MonoBehaviour:
   _addingScoreText: {fileID: 1497492205}
   _addingScoreAnimation: {fileID: 0}
   _animationDuration: 1
+  _resetHighscoreOnAwake: 1
 --- !u!114 &293942979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45338,6 +45339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1488038292}
   - component: {fileID: 1488038291}
+  - component: {fileID: 1488038293}
   m_Layer: 0
   m_Name: EmergencySpawnService
   m_TagString: Untagged
@@ -45462,6 +45464,18 @@ Transform:
   - {fileID: 115269096}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1488038293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488038290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db785232931f4544d9f0dd0b19d7c039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1488352445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 449030, guid: 018f99568725bb74a95da394773e483b, type: 3}

@@ -25,7 +25,6 @@ public class AudioService : MonoBehaviour
 
     public void StopMusic()
     {
-        Debug.Log("hui tebe");
         _musicSource.clip = null;
         _musicSource.loop = false;
         _musicSource.Stop();

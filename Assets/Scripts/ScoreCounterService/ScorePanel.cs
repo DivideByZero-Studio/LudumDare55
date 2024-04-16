@@ -17,8 +17,11 @@ public class ScorePanel : MonoBehaviour
 
     private Animator _animator;
 
+    [SerializeField] private bool _resetHighscoreOnAwake;
     private void Awake()
     {
+        if (_resetHighscoreOnAwake) PlayerPrefs.SetInt("Highscore", 0);
+
         _animator = GetComponent<Animator>();
     }
 
@@ -50,6 +53,10 @@ public class ScorePanel : MonoBehaviour
 
     private void OnDisable()
     {
+        if (_score > PlayerPrefs.GetInt("Highscore", 0))
+        {
+            PlayerPrefs.SetInt("Highscore", _score);
+        }
         _scoreCounterService.ScoreChanged -= StartChangingAnim;
     }
 }
