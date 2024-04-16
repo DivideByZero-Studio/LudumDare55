@@ -42,4 +42,9 @@ public class AudioService : MonoBehaviour
         _soundFXSource.volume = volume;
         _soundFXSource.PlayOneShot(clip);
     }
+
+    public void StopAmbient()
+    {
+        _ambientSource.Stop();
+    }
 }
