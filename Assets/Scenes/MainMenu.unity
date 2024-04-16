@@ -803,6 +803,7 @@ GameObject:
   - component: {fileID: 153583518}
   - component: {fileID: 153583517}
   - component: {fileID: 153583516}
+  - component: {fileID: 153583522}
   m_Layer: 0
   m_Name: BackButtonRight
   m_TagString: Untagged
@@ -828,6 +829,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1210607196}
         m_TargetAssemblyTypeName: MainMenuService, Assembly-CSharp
         m_MethodName: SwitchToMainFromSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 153583522}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -944,6 +957,19 @@ Transform:
   - {fileID: 2146419491}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 76.24, z: 0}
+--- !u!114 &153583522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153583515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26799fa96ff7c49498683ec9095ce6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: cae9d1c8dd46705438e3cb5001d69449, type: 3}
 --- !u!1001 &181866088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1187,6 +1213,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7235495544061757970, guid: 3579b6a191a6262488eca857742b994d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1065431444}
+    - targetCorrespondingSourceObject: {fileID: 7235495544061757970, guid: 3579b6a191a6262488eca857742b994d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1065431447}
   m_SourcePrefab: {fileID: 100100000, guid: 3579b6a191a6262488eca857742b994d, type: 3}
 --- !u!1 &208656315
 GameObject:
@@ -1965,6 +1994,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1412363122834768907, guid: c2950abe12173684f8fb76d8cd3ed1b3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1536908161}
+    - targetCorrespondingSourceObject: {fileID: 1412363122834768907, guid: c2950abe12173684f8fb76d8cd3ed1b3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1536908164}
   m_SourcePrefab: {fileID: 100100000, guid: c2950abe12173684f8fb76d8cd3ed1b3, type: 3}
 --- !u!4 &568063902 stripped
 Transform:
@@ -3263,6 +3295,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2908944898091809559, guid: 8d1af90125950e342999c5dbdefdd676, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1168747987}
+    - targetCorrespondingSourceObject: {fileID: 2908944898091809559, guid: 8d1af90125950e342999c5dbdefdd676, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1168747990}
   m_SourcePrefab: {fileID: 100100000, guid: 8d1af90125950e342999c5dbdefdd676, type: 3}
 --- !u!1 &914785569
 GameObject:
@@ -3871,6 +3906,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1065431447}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _textCanvas: {fileID: 415130202}
 --- !u!65 &1065431444
 BoxCollider:
@@ -3893,6 +3940,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5014317, y: 2.995031, z: 8.3229685}
   m_Center: {x: -0.0000019073486, y: 1.4975156, z: 0.0000019073486}
+--- !u!114 &1065431447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065431436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26799fa96ff7c49498683ec9095ce6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: cae9d1c8dd46705438e3cb5001d69449, type: 3}
 --- !u!1001 &1083544571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4307,6 +4367,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1168747990}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _textCanvas: {fileID: 1694252610}
 --- !u!65 &1168747987
 BoxCollider:
@@ -4329,6 +4401,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.426696, y: 2.8345528, z: 5.8210826}
   m_Center: {x: 0, y: 1.4172764, z: -0.00000047683716}
+--- !u!114 &1168747990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168747979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26799fa96ff7c49498683ec9095ce6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: cae9d1c8dd46705438e3cb5001d69449, type: 3}
 --- !u!1 &1179478383
 GameObject:
   m_ObjectHideFlags: 0
@@ -5700,6 +5785,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1536908164}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _textCanvas: {fileID: 1834317677}
 --- !u!65 &1536908161
 BoxCollider:
@@ -5722,6 +5819,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.408282, y: 1.8256794, z: 5.4405203}
   m_Center: {x: 0, y: 0.9128397, z: 0}
+--- !u!114 &1536908164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536908153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26799fa96ff7c49498683ec9095ce6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: cae9d1c8dd46705438e3cb5001d69449, type: 3}
 --- !u!1001 &1538189576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8282,6 +8392,7 @@ GameObject:
   - component: {fileID: 2065102240}
   - component: {fileID: 2065102239}
   - component: {fileID: 2065102238}
+  - component: {fileID: 2065102244}
   m_Layer: 0
   m_Name: BackButtonLeft
   m_TagString: Untagged
@@ -8307,6 +8418,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1210607196}
         m_TargetAssemblyTypeName: MainMenuService, Assembly-CSharp
         m_MethodName: SwitchToMainFromAboutUs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2065102244}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8423,6 +8546,64 @@ Transform:
   - {fileID: 1217823607}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 293.06, z: 0}
+--- !u!114 &2065102244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065102237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26799fa96ff7c49498683ec9095ce6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: cae9d1c8dd46705438e3cb5001d69449, type: 3}
+--- !u!1 &2068410772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2068410774}
+  - component: {fileID: 2068410773}
+  m_Layer: 0
+  m_Name: BackgroundMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2068410773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068410772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b6b9b5d81d4ff4cb71820d66b86724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _music: {fileID: 8300000, guid: f217c272465ea75498ac5f033d3a9643, type: 3}
+--- !u!4 &2068410774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068410772}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 302.48648, y: 180.29276, z: 3.594172}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2076200651
 GameObject:
   m_ObjectHideFlags: 0
@@ -8934,3 +9115,4 @@ SceneRoots:
   - {fileID: 380437867}
   - {fileID: 153583521}
   - {fileID: 2065102243}
+  - {fileID: 2068410774}

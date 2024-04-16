@@ -11,6 +11,10 @@ public class EmergencyIcon : MonoBehaviour
     public GameObject EmergencyPointPrefab => _emergencyPointPrefab;
     public Transform EmergencyPointTransform => _emergencyPointTransform;
 
+    [SerializeField] private AudioClip _chooseClip;
+    [SerializeField] private AudioClip _failClip;
+    [SerializeField] private AudioClip _doneClip;
+
     [SerializeField] private float _maxLifeTime;
     [SerializeField] private float _particleSystemLifeTime;
     [SerializeField] private GameObject _emergencyPointPrefab;
@@ -23,6 +27,7 @@ public class EmergencyIcon : MonoBehaviour
     [Inject] ChooseServicePanel _chooseServicePanel;
     [Inject] EmergencySpawnService _emergencySpawnService;
     [Inject] TimeCountService _timeCountService;
+    [Inject] AudioService _audioService;
 
     private void Awake()
     {
@@ -52,6 +57,7 @@ public class EmergencyIcon : MonoBehaviour
         StartCoroutine(ParticleRoutine());
         _visuals.Deactivate();
         _visuals.PlayDoneEffect();
+        _audioService.PlaySFX(_doneClip);
         //Play Done effect
     }
 
@@ -61,6 +67,7 @@ public class EmergencyIcon : MonoBehaviour
         StartCoroutine(ParticleRoutine());
         _visuals.Deactivate();
         _visuals.PlayFailedEffect();
+        _audioService.PlaySFX(_failClip);
         //Play Failed effect
     }
 
@@ -72,6 +79,7 @@ public class EmergencyIcon : MonoBehaviour
     public void ActivateChoosenEffect()
     {
         _visuals.ZoomIn();
+        _audioService.PlaySFX(_chooseClip);
     }
 
     public void DeactivateChossenEffect()
